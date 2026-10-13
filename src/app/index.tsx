@@ -11,8 +11,11 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { MaterialCommunityIcons, Feather } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 
 export default function LoginScreen() {
+  const router = useRouter();
+
   const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -27,11 +30,13 @@ export default function LoginScreen() {
   };
 
   const handleLogin = () => {
-    if (!identifier) {
-      showBanner('Silakan lengkapi Email atau Nomor Rekam Medis.', true);
+    if (!identifier || !password) {
+      showBanner('Silakan lengkapi Email/ID Pasien dan Kata Sandi.', true);
       return;
     }
-    showBanner('Berhasil terhubung. Membuka rekam medis Anda...');
+    
+    // Berpindah langsung ke halaman home/beranda
+    router.replace('/home');
   };
 
   return (
@@ -178,7 +183,7 @@ export default function LoginScreen() {
               <View className="flex-row space-x-3">
                 <TouchableOpacity
                   className="flex-1 h-11 bg-gray-100 rounded-xl flex-row items-center justify-center"
-                  onPress={() => showBanner('Memindai biometrik...')}
+                  onPress={() => router.replace('/home')}
                 >
                   <MaterialCommunityIcons name="fingerprint" size={20} color="#374151" />
                   <Text className="text-xs font-semibold text-gray-700 ml-2">Biometrik</Text>
@@ -186,7 +191,7 @@ export default function LoginScreen() {
 
                 <TouchableOpacity
                   className="flex-1 h-11 bg-gray-100 rounded-xl flex-row items-center justify-center ml-2"
-                  onPress={() => showBanner('Menghubungkan SatuSehat...')}
+                  onPress={() => router.replace('/home')}
                 >
                   <MaterialCommunityIcons name="shield-check-outline" size={20} color="#374151" />
                   <Text className="text-xs font-semibold text-gray-700 ml-2">SatuSehat</Text>
