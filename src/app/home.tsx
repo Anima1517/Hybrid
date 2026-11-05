@@ -1,18 +1,16 @@
-import React from "react";
+import { FontAwesome5, Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import {
-  View,
-  Text,
   Image,
   ScrollView,
-  TouchableOpacity,
   StatusBar,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { MaterialCommunityIcons, Ionicons, FontAwesome5 } from "@expo/vector-icons";
 
 export default function HomeScreen() {
   return (
-    // Gunakan flex-1 pada View utama
     <View className="flex-1 bg-surface">
       <StatusBar barStyle="dark-content" backgroundColor="#f9f9f9" />
 

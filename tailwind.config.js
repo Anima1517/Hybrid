@@ -1,7 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  // 1. Tambahkan preset NativeWind di sini
+
   presets: [require("nativewind/preset")],
+  darkMode: "class",
+
   content: [
     "./App.{js,jsx,ts,tsx}",
     "./app/**/*.{js,jsx,ts,tsx}",

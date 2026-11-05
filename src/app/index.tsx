@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
+import { useState } from 'react';
 import {
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-  ScrollView,
   Image,
   KeyboardAvoidingView,
   Platform,
+  ScrollView,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { MaterialCommunityIcons, Feather } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
 
 export default function LoginScreen() {
   const router = useRouter();
