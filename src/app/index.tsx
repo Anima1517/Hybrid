@@ -219,16 +219,23 @@ export default function LoginScreen() {
                   </Text>
                 </View>
               )}
-            </View>
 
-            {/* Bagian Bawah: Daftar Akun Baru */}
-            <View className="flex-row justify-center items-center mt-6">
-              <Text className="text-sm text-gray-600">Belum punya akun?</Text>
-              <TouchableOpacity onPress={() => showBanner('Mengarahkan ke pendaftaran...')}>
-                <Text className="text-sm font-bold text-rose-600 ml-1">Daftar Akun Baru</Text>
-              </TouchableOpacity>
-            </View>
-
+                {/* Bagian Bawah: Tombol ke Register */}
+                <View className="flex-row justify-center items-center mt-6">
+                  <Text className="text-sm text-gray-600">Belum punya akun?</Text>
+                  <TouchableOpacity 
+                    onPress={() => {
+                      showBanner('Mengarahkan ke pendaftaran...');
+                      router.push('/register' as any);
+                    }}
+                    activeOpacity={0.7}
+                  >
+                    <Text className="text-sm font-bold text-rose-600 ml-1">
+                      Daftar Akun Baru
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
