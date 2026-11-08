@@ -1,7 +1,6 @@
-import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { useRouter, usePathname } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import { usePathname, useRouter } from 'expo-router';
+import { Text, TouchableOpacity, View } from 'react-native';
 
 export function Navbar() {
   const router = useRouter();
@@ -10,7 +9,6 @@ export function Navbar() {
   const navItems = [
     { key: 'home', label: 'Beranda', route: '/home', icon: 'home-outline', activeIcon: 'home' },
     { key: 'jadwal', label: 'Jadwal', route: '/jadwal', icon: 'calendar-outline', activeIcon: 'calendar' },
-    { key: 'riwayat', label: 'Riwayat', route: '/home', icon: 'document-text-outline', activeIcon: 'document-text' },
     { key: 'profile', label: 'Profil', route: '/profile', icon: 'person-outline', activeIcon: 'person' },
   ];
 
